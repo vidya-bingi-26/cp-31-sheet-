@@ -1,0 +1,28 @@
+que2-800 rating  
+
+Solution: 
+#include<iostream>
+using namespace std;
+ 
+int main(){
+    int t;
+    cin>>t;
+    for(int z=0;z<t;z++){
+    int n,x;
+    cin>>n>>x;
+    int arr[n];
+    for(int j=0;j<n;j++){
+        cin>>arr[j];
+    }
+    int last_pump=arr[n-1];
+    int dist=2*(x-last_pump);
+    int max_dist=arr[0]-0;
+    for(int i=1;i<n;i++){
+       if( arr[i]-arr[i-1]>max_dist){
+        max_dist=arr[i]-arr[i-1]; 
+       }
+    }
+    cout<<max(max_dist,dist)<<endl;
+    }
+    return 0;
+}
